@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: Example
+  description: Example
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /ping:
+    get:
+      operationId: Ping
+      responses:
+        '200':
+          description: 'return pong in response'
+          content:
+            text/plain:
+              schema:
+                type: string
+  /:
+    get:
+      operationId: GetAllStored
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoredItem'
+          description: 'get all stored items'
+    post:
+      operationId: CreateNew
+      description: ''
+      parameters: [ ]
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredItem'
+          description: object created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+  /{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: "Уникальный идентификатор"
+          schema:
+            type: string
+      operationId: GetByID
+      description: 'Get by id'
+      responses:
+        200:
+          description: Get by id response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredItem'
+        404:
+          description: Not found
+
+components:
+  schemas:
+    StoredItem:
+      description: 'Хранимый объект'
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+    PostRequest:
+      description: 'Хранимый объект'
+      type: object
+      properties:
+        name:
+          type: string
