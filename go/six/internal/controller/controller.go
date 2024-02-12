@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/labstack/echo"
-	"github.com/vlad-marlo/example/go/modules/src/internal/service"
+	"github.com/vlad-marlo/example/go/six/internal/service"
 )
 
 type Controller struct {

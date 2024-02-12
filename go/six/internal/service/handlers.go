@@ -3,7 +3,7 @@ package service
 import (
 	"errors"
 	"github.com/google/uuid"
-	"github.com/vlad-marlo/example/go/modules/src/internal/model"
+	"github.com/vlad-marlo/example/go/six/internal/model"
 )
 
 func (srv *Service) HandleGetByID(id string) (*model.StoredData, error) {

@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/labstack/echo"
-	"github.com/vlad-marlo/example/go/modules/src/internal/model"
+	"github.com/vlad-marlo/example/go/six/internal/model"
 	"net/http"
 )
 

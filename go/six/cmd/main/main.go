@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/vlad-marlo/example/go/modules/src/internal/controller"
+	"github.com/vlad-marlo/example/go/six/internal/controller"
 )
 
 func main() {

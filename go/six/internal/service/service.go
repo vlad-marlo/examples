@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/vlad-marlo/example/go/modules/src/internal/model"
+	"github.com/vlad-marlo/example/go/six/internal/model"
 	"sync"
 )
 
